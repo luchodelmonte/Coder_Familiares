@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<head>
+    <title>Mis Familiares:</title>
+</head>
+<body>
+    <h1>Mis familiares son:</h1>
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active">
+            {% if familiares %}
+                {% for familiar in familiares %}
+                    <p>Mi {{ familiar.parentezco }} se llama {{ familiar.nombre }}</p>
+                    <p>Tiene {{ familiar.edad }} años y nació el día {{ familiar.fecha_nacimiento }}</p>
+                    <hr>
+                {% endfor %}
+            {% else %}
+            <p>Todavía no hay familiares cargados en la base de datos.</p>
+            {% endif %}
+        </a>
+    </div>
+</body>
+</html>
